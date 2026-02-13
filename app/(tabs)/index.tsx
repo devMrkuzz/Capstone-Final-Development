@@ -63,6 +63,15 @@ export default function HomeScreen() {
           >
             <Text style={styles.buttonText}>Sign Up</Text>
           </Pressable>
+
+          <Text style={styles.divider}>OR</Text>
+
+          <Pressable
+            style={styles.googleBtn}
+            onPress={() => console.log("Sign Up with Google")}
+          >
+            <Text style={styles.googleTxt}>Sign up with Google</Text>
+          </Pressable>
         </View>
       </ScrollView>
     </KeyboardAvoidingView>
@@ -70,6 +79,23 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  googleBtn: {
+    padding: 10,
+    backgroundColor: "#4285F4",
+    borderRadius: 10,
+    width: "100%",
+    alignItems: "center",
+  },
+
+  googleTxt: {
+    color: "white",
+  },
+
+  divider: {
+    marginTop: 20,
+    color: "#424242ff",
+  },
+
   container: {
     flexGrow: 1,
     justifyContent: "center",
@@ -117,14 +143,13 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: "#800000",
-    padding: 15,
+    padding: 10,
     borderRadius: 10,
     width: "100%",
     alignItems: "center",
   },
   buttonText: {
     color: "white",
-    fontWeight: "bold",
     fontSize: 16,
   },
 });
