@@ -30,7 +30,7 @@ export default function HomeScreen() {
       {/* Buttons at bottom */}
       <View style={styles.bottomContent}>
         <Pressable
-          onPress={() => router.push("../auth/signin")}
+          onPress={() => router.push("/auth/SignIn")}
           style={styles.primaryButton}
         >
           <Text style={styles.buttonText}>Sign In to AskSorSU</Text>

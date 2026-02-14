@@ -1,13 +1,12 @@
-// auth/layout.tsx
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import SignIn from "./signin";
-
-const Stack = createNativeStackNavigator();
+import { Stack } from "expo-router";
 
 export default function AuthLayout() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="SignIn" component={SignIn} />
-    </Stack.Navigator>
+    <Stack
+      screenOptions={{
+        headerShown: false,
+        animation: "slide_from_right",
+      }}
+    />
   );
 }

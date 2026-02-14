@@ -1,1 +1,0 @@
-import { useRoute } from "@react-navigation/native";
