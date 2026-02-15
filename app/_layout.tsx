@@ -16,9 +16,26 @@ export const unstable_settings = {
 export default function RootLayout() {
   const colorScheme = useColorScheme();
 
+  const theme =
+    colorScheme === "dark" ?
+      {
+        ...DarkTheme,
+        colors: {
+          ...DarkTheme.colors,
+          background: "#800000",
+        },
+      }
+    : {
+        ...DefaultTheme,
+        colors: {
+          ...DefaultTheme.colors,
+          background: "#800000",
+        },
+      };
+
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
+    <ThemeProvider value={theme}>
+      <Stack screenOptions={{ contentStyle: { backgroundColor: "#800000" } }}>
         <Stack.Screen
           name="(tabs)"
           options={{ headerShown: false, animation: "slide_from_right" }}
@@ -31,17 +48,9 @@ export default function RootLayout() {
             animation: "slide_from_right",
           }}
         />
-
-        <Stack.Screen
-          name="modal"
-          options={{
-            presentation: "modal",
-            title: "Modal",
-          }}
-        />
       </Stack>
 
-      <StatusBar style="auto" />
+      <StatusBar style="light" backgroundColor="#800000" />
     </ThemeProvider>
   );
 }
